@@ -9,13 +9,17 @@ const mongoose = require("mongoose");
 var index = require("./routes/index");
 const api = require("./routes/api/index");
 
+const connectionString =
+  "mongodb+srv://Mike:Mike@cluster0-pqdo4.mongodb.net/test?retryWrites=true&w=majority";
+
 var app = express();
 mongoose.Promise = global.Promise;
 //Adds connection to database using mongoose
 //for <dbuser>:replace with your username, <dbpassword>: replace with your password.
 //<DATABASE_URL>: replace with database url, example:ds234562.mlab.com:17283
-mongoose.connect("<dbuser>:<dbpassword>@<DATABASE_URL>/appointments", {
-  useMongoClient: true
+
+mongoose.connect(connectionString, {
+  useNewUrlParser: true
 });
 //This enabled CORS, Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources (e.g. fonts)
 //on a web page to be requested from another domain outside the domain from which the first resource was served

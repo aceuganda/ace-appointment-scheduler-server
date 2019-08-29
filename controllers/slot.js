@@ -1,4 +1,4 @@
-var Model = require("../models/index");
+const Model = require("../models/index");
 
 const { Appointment, Slot } = Model;
 const slotController = {

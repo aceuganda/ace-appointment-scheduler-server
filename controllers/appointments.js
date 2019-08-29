@@ -1,4 +1,5 @@
-var Model = require("../models/index");
+// import Model from "../models/index";
+const Model = require("../models/index");
 const { Appointment, Slot } = Model;
 const Nexmo = require("nexmo");
 const appointmentController = {
@@ -39,15 +40,15 @@ const appointmentController = {
       Appointment.find({ _id: saved._id })
         .populate("slots")
         .exec((err, appointment) => res.json(appointment));
-      const from = VIRTUAL_NUMBER;
-      const to = RECIPIENT_NUMBER;
-      nexmo.message.sendSms(from, to, msg, (err, responseData) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.dir(responseData);
-        }
-      });
+      // const from = VIRTUAL_NUMBER;
+      // const to = RECIPIENT_NUMBER;
+      // nexmo.message.sendSms(from, to, msg, (err, responseData) => {
+      //   if (err) {
+      //     console.log(err);
+      //   } else {
+      //     console.dir(responseData);
+      //   }
+      // });
     });
   }
 };

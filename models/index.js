@@ -17,3 +17,8 @@ const appointmentSchema = new Schema({
   created_at: Date
 });
 const Appointment = model("Appointment", appointmentSchema);
+
+module.exports = {
+  Appointment,
+  Slot
+};
