@@ -10,8 +10,10 @@ const slotController = {
     var requestBody = req.body;
 
     var newslot = new Slot({
-      slot_time: requestBody.slot_time,
-      slot_date: requestBody.slot_date,
+      slot_startDate: requestBody.slot_startDate,
+      slot_endDate: requestBody.slot_endDate,
+      slot_startTime: requestBody.slot_startTime,
+      slot_endTime: requestBody.slot_endTime,
       created_at: Date.now()
     });
     newSlot.save((err, saved) => {
@@ -21,14 +23,14 @@ const slotController = {
     });
   },
   findByDate(req, res) {
-    var slot_date = req.params.slot_date;
-    console.log("slot date: ", slot_date);
+    var slot_date = req.params.slot_startDate;
+    console.log("slot start date: ", slot_startDate);
     //slot_date = '2017-11-09';
 
     //Returns all slot with present date
     Slot.find({})
-      .where("slot_date")
-      .equals(slot_date)
+      .where("slot_startDate")
+      .equals(slot_startDate)
       .exec((err, slots) => res.json(slots));
   }
 };

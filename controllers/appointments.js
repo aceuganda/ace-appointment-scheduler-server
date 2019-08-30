@@ -5,13 +5,17 @@ const Nexmo = require("nexmo");
 const appointmentController = {
   all(req, res) {
     // Returns all appointments
-    Appointment.find({}).exec((err, appointments) => res.json(appointments));
+    Appointment.find({})
+      .populate("slots")
+      .exec((err, appointments) => res.json(appointments));
   },
   create(req, res) {
     var requestBody = req.body;
     var newslot = new Slot({
-      slot_time: requestBody.slot_time,
-      slot_date: requestBody.slot_date,
+      slot_startDate: requestBody.slot_startDate,
+      slot_endDate: requestBody.slot_endDate,
+      slot_startTime: requestBody.slot_startTime,
+      slot_endTime: requestBody.slot_endTime,
       created_at: Date.now()
     });
     newslot.save();

@@ -3,8 +3,10 @@ const Schema = mongoose.Schema,
   model = mongoose.model.bind(mongoose),
   ObjectId = mongoose.Schema.Types.ObjectId;
 const slotSchema = new Schema({
-  slot_time: String,
-  slot_date: String,
+  slot_startDate: String,
+  slot_endDate: String,
+  slot_startTime: String,
+  slot_endTime: String,
   created_at: Date
 });
 const Slot = model("Slot", slotSchema);
