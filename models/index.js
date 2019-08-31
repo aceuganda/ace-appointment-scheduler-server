@@ -14,6 +14,13 @@ const appointmentSchema = new Schema({
   id: ObjectId,
   name: String,
   email: String,
+  organisation: String,
+  purpose: String,
+  skillset: String,
+  analysis: String,
+  number: Number,
+  description: String,
+  recommendation: String,
   phone: Number,
   slots: { type: ObjectId, ref: "Slot" },
   created_at: Date

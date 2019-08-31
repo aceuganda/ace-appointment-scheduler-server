@@ -24,6 +24,13 @@ const appointmentController = {
       name: requestBody.name,
       email: requestBody.email,
       phone: requestBody.phone,
+      organisation: requestBody.organisation,
+      purpose: requestBody.purpose,
+      skillset: requestBody.skillset,
+      analysis: requestBody.analysis,
+      number: requestBody.number,
+      description: requestBody.description,
+      recommendation: requestBody.recommendation,
       slots: newslot._id
     });
 
