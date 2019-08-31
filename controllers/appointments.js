@@ -16,6 +16,8 @@ const appointmentController = {
       slot_endDate: requestBody.slot_endDate,
       slot_startTime: requestBody.slot_startTime,
       slot_endTime: requestBody.slot_endTime,
+      slot_days: requestBody.slot_days,
+      slot_hours: requestBody.slot_hours,
       created_at: Date.now()
     });
     newslot.save();

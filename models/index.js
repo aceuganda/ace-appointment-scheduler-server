@@ -7,6 +7,8 @@ const slotSchema = new Schema({
   slot_endDate: String,
   slot_startTime: String,
   slot_endTime: String,
+  slot_days: Number,
+  slot_hours: Number,
   created_at: Date
 });
 const Slot = model("Slot", slotSchema);
