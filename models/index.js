@@ -24,6 +24,10 @@ const appointmentSchema = new Schema({
   description: String,
   recommendation: String,
   phone: Number,
+  vrPurpose: String,
+  charge: String,
+  agreement:String,
+  chargeAmount: String,
   slots: { type: ObjectId, ref: "Slot" },
   created_at: Date
 });

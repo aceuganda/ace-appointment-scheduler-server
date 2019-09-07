@@ -33,6 +33,10 @@ const appointmentController = {
       number: requestBody.number,
       description: requestBody.description,
       recommendation: requestBody.recommendation,
+        vrPurpose: requestBody.vrPurpose,
+  charge: requestBody.charge,
+  agreement:requestBody.agreement,
+  chargeAmount: requestBody.chargeAmount,
       slots: newslot._id
     });
 
